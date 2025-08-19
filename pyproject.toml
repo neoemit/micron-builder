@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "micron"
+version = "0.0.1"
+description = "Fluent string builder for micron markup"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Thomas La Mendola", email = "thomas.lamendola@gmail.com" }]
+license = {text = "MIT"}
+classifiers = [
+	"Development Status :: 3 - Alpha",
+	"Intended Audience :: Developers",
+	"License :: OSI Approved :: MIT License",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3 :: Only",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
+]
+keywords = ["micron", "builder", "colors", "ansi", "terminal"]
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["micron*"]
