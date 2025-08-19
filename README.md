@@ -90,8 +90,8 @@ Colors can be specified as:
 
 Clone the repo and install in editable mode:
 ```bash
-git clone https://github.com/neoemit/micron.git
-cd micron
+git clone https://github.com/neoemit/micron-builder.git
+cd micron-builder
 pip install -e .
 ```
 
