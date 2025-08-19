@@ -1,6 +1,6 @@
-# Micron
+# micron-builder
 
-**Micron** is a small Python library for building micron markup strings programmatically.  
+**micron-builder** is a small Python library for building micron markup strings programmatically.  
 It provides a fluent API for composing text fragments, headers, separators, and styles without manually handling all the Micron markup symbols.
 
 ---
@@ -23,7 +23,7 @@ It provides a fluent API for composing text fragments, headers, separators, and 
 ## 📦 Installation
 
 ```bash
-pip install micron
+pip install micron-builder
 ```
 
 ## 🚀 Usage
@@ -90,8 +90,8 @@ Colors can be specified as:
 
 Clone the repo and install in editable mode:
 ```bash
-git clone https://github.com/yourname/micronbuilder.git
-cd micronbuilder
+git clone https://github.com/neoemit/micron.git
+cd micron
 pip install -e .
 ```
 
