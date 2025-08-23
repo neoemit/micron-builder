@@ -11,6 +11,28 @@ def header(text: str):
 
 print(header("Micron Colors Example"))
 
+rabbit = r'''
+                          .".
+                         /  |
+                        /  /
+                       / ,"
+           .-------.--- /
+          "._ __.-/ o. o\  
+             "   (    Y  )
+                  )     /
+                 /     (
+                /       Y
+            .-"         |
+           /  _     \    \ 
+          /    `. ". ) /' )
+         Y       )( / /(,/
+        ,|      /     )
+       ( |     /     /
+        " \_  (__   (__
+            "-._,)--._,)
+
+'''
+
 builder = (
     MicronBuilder()
     .text('Error!', color=Color.PINK, bgcolor=Color.BROWN, bold=True)
@@ -31,7 +53,7 @@ builder = (
     .text('Links are also supported', color=Color.CYAN, padding=1)
     .breakline()
     .text('This is a link', address_link='123123123', color=Color.TOMATO, underline=True, padding=1)
-    # TODO: continue from Fields & Requests
+    .raw(rabbit)
 )
 
-print(str(builder)) # or `print(builder.build())`
+print(str(builder)) # or "print(builder.build())"

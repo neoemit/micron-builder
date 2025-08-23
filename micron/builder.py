@@ -79,6 +79,11 @@ class MicronBuilder:
         level = max(1, int(indent_level))
         self.parts.append(f"\n{('>' * level)}{content}\n")
         return self
+    
+    def raw(self, content: str) -> "MicronBuilder":
+        """Append raw content without any processing."""
+        self.parts.append(content)
+        return self
 
     def clear(self) -> "MicronBuilder":
         self.parts.append("\n``")

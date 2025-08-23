@@ -47,7 +47,7 @@ builder = (
     .separator("=")
     .text(
         "Clickable link",
-        address_link="example.com",
+        address_link="aaabbbcccddd",
         page_link="index.mu",
         italic=True,
     )
@@ -59,20 +59,43 @@ print(builder.build())
 This would output Micron markup like:
 
 ```
->Welcome!
 
-`!`Ff00This is bold red text`f`!
+>Welcome!
+`Ff00`!This is bold red text`!`f
 
 `c
-_`Centered and underlined`_
+`_Centered and underlined`_
 `a
-
 -=
 
-`[*`Clickable link`example.com:/page/index.mu]
+`*`[Clickable link`aaabbbcccddd:/page/index.mu]`*
 ```
 
 Which renders appropriately in Micron-compatible renderers.
+
+New: use the raw(...) method to insert unescaped Micron markup directly
+
+```python
+from micron import MicronBuilder
+from micron.colors import Color
+
+builder = (
+    MicronBuilder()
+    .text("Some text", color=Color.GREEN)
+    # raw() inserts the provided string exactly as-is into the output,
+    # useful for injecting already-formed Micron markup.
+    .raw("`!`Ff00This is raw micron markup`f`!")
+)
+
+print(builder.build())
+```
+
+This will include the raw markup verbatim in the output:
+
+```
+`F070Some text`f
+`!`Ff00This is raw micron markup`f`!
+```
 
 ## 🎨 Colors
 
