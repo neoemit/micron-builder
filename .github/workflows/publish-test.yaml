@@ -7,6 +7,16 @@ on:
 
 jobs:
   build:
+    # Skipped when the pushed commit's message says [skip ci], [ci skip], [no ci], [skip actions] or
+    # [actions skip]: GitHub skips push and pull_request runs for them itself, and this makes it
+    # explicit and covers tag pushes too. Run workflow (workflow_dispatch) is never skipped.
+    if: >-
+      github.event_name != 'push' || !(
+      contains(github.event.head_commit.message, '[skip ci]') ||
+      contains(github.event.head_commit.message, '[ci skip]') ||
+      contains(github.event.head_commit.message, '[no ci]') ||
+      contains(github.event.head_commit.message, '[skip actions]') ||
+      contains(github.event.head_commit.message, '[actions skip]'))
     runs-on: ubuntu-latest
 
     steps:
